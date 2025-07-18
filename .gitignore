@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+env/
+*.sqlite3
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+*.mo
+local_settings.py
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# React
+frontend/bookLendingApp/.env
+frontend/bookLendingApp/.next/
+
+# VSCode or IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
