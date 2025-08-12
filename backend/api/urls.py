@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView,BookListView,BorrowBookView,ReturnBookView,MyBorrowedBooksView,RecommendationView
+from .views import RegisterView,BookListView,BorrowBookView,ReturnBookView,MyBorrowedBooksView,RecommendationView,SubmitReviewView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     path('books/<int:book_id>/return/', ReturnBookView.as_view(), name='return-book'),
     path('mybooks/', MyBorrowedBooksView.as_view(), name='my-borrowed-books'),
     path('recommendations/', RecommendationView.as_view(), name='book-recommendations'),
+    path('books/<int:book_id>/review/', SubmitReviewView.as_view(), name='submit-review')
 ]

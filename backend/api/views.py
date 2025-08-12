@@ -3,9 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import RegisterSerializer,BookSerializer,BorrowSerializer
 from django.contrib.auth.models import User
-from .models import Book,Borrow
+from .models import Book,Borrow,Review
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
+from rest_framework.pagination import PageNumberPagination
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -28,9 +29,15 @@ class RegisterView(generics.CreateAPIView):
 
 
 
+class BookPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 50 
+
 class BookListView(generics.ListAPIView):
     serializer_class = BookSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = BookPagination
 
     def get_queryset(self):
         queryset = Book.objects.all()
@@ -95,7 +102,7 @@ class MyBorrowedBooksView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Borrow.objects.filter(user=self.request.user, returned=False)
+        return Borrow.objects.filter(user=self.request.user)
     
 
 
@@ -119,3 +126,30 @@ class RecommendationView(APIView):
 
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)
+
+
+
+class SubmitReviewView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, book_id):
+        user = request.user
+        book = get_object_or_404(Book, id=book_id)
+
+        # Check if user has borrowed and returned the book
+        if not Borrow.objects.filter(user=user, book=book, returned=True).exists():
+            return Response({'error': 'You must finish reading the book before reviewing it.'}, status=400)
+
+        rating = request.data.get('rating')
+        description = request.data.get('description', '')
+
+        if not rating or not (1 <= int(rating) <= 10):
+            return Response({'error': 'Rating must be between 1 and 10'}, status=400)
+
+        review, created = Review.objects.update_or_create(
+            user=user,
+            book=book,
+            defaults={'rating': rating, 'description': description}
+        )
+
+        return Response({'message': 'Review submitted successfully'})

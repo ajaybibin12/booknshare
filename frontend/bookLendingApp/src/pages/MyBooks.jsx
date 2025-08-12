@@ -66,6 +66,7 @@ export default function MyBooks() {
               key={entry.book.id}
               book={entry.book}
               isBorrowed={true}
+              isReturned={entry.book.returned}
               onReturn={() => returnBook(entry.book.id)}
               onBorrow={() => borrowBook(entry.book.id)}
             />
