@@ -133,12 +133,13 @@ python manage.py runserver
 
 📸 Screenshots
 
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181449" src="https://github.com/user-attachments/assets/53e262cd-ac8f-4717-b0f4-241218b4040d" />
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181430" src="https://github.com/user-attachments/assets/3ed1ebda-e7d2-4e9a-a1d4-fa490d277477" />
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181406" src="https://github.com/user-attachments/assets/f7b78fbe-986b-42a2-81e7-f321b427b508" />
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181341" src="https://github.com/user-attachments/assets/e5f04050-4f4f-4c50-b890-6d4d11515880" />
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181314" src="https://github.com/user-attachments/assets/250005d2-430f-4600-bdfd-68b04bbd44c4" />
-<img width="1920" height="1200" alt="Screenshot 2025-07-18 181050" src="https://github.com/user-attachments/assets/b6afa3dd-9979-4c21-aa2e-379ef1097255" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 153804" src="https://github.com/user-attachments/assets/89fdac30-e00c-44c2-98ac-e253247c5d6e" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 153827" src="https://github.com/user-attachments/assets/579bd81b-873f-43f0-8138-573bf261c278" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 153903" src="https://github.com/user-attachments/assets/a665df10-de57-47bb-beed-08f59ce3524d" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 153929" src="https://github.com/user-attachments/assets/f2459439-2fb9-42d9-b22f-92ea56a461ec" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 154009" src="https://github.com/user-attachments/assets/6742dede-750b-45b9-bfd5-1bb309b1ba5b" />
+<img width="1920" height="1200" alt="Screenshot 2025-08-12 154027" src="https://github.com/user-attachments/assets/c857810e-d83f-4fca-a94d-d99b34231d93" />
+
 
 
 💻 Tech Stack
